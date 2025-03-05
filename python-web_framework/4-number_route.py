@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+A simple Flask web application.
+"""
+
 from flask import Flask
 
 
@@ -19,7 +23,9 @@ def hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def c_route(text):
-    """Displays 'C' followed by the value of the text variable with underscores replaced by spaces"""
+    """Displays 'C' followed by the value of the text variable
+    with underscores replaced by spaces
+    """
     new_text = text.replace('_', ' ')
     return "C " + new_text
 
@@ -27,7 +33,9 @@ def c_route(text):
 @app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def python_route(text):
-    """Displays 'Python' followed by the value of the text variable with underscores replaced by spaces"""
+    """Displays 'Python' followed by the value of the text variable
+    with underscores replaced by spaces
+    """
     new_text = text.replace('_', ' ')
     return "Python " + new_text
 
